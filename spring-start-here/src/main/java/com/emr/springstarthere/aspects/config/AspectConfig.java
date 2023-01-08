@@ -1,6 +1,6 @@
 package com.emr.springstarthere.aspects.config;
 
-import com.emr.springstarthere.aspects.aspect.LoggingAspect;
+import com.emr.springstarthere.aspects.aspect.AnnotationLoggingAspect;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -12,7 +12,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 public class AspectConfig {
 
     @Bean
-    public LoggingAspect getLoggingAspect(){
-        return new LoggingAspect();
+    public AnnotationLoggingAspect getLoggingAspect(){
+        return new AnnotationLoggingAspect();
     }
 }
