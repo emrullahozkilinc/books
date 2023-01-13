@@ -1,6 +1,7 @@
 package com.emr.webproject1.processor;
 
 import com.emr.webproject1.service.LoggedUserManagementService;
+import com.emr.webproject1.service.LoginCountService;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.annotation.RequestScope;
 
@@ -9,16 +10,18 @@ import org.springframework.web.context.annotation.RequestScope;
 public class LoginProcessor {
 
     private final LoggedUserManagementService loggedService;
+    private final LoginCountService loginCountService;
 
     private String username;
     private String password;
 
-    public LoginProcessor(LoggedUserManagementService loggedService) {
+    public LoginProcessor(LoggedUserManagementService loggedService, LoginCountService loginCountService) {
         this.loggedService = loggedService;
+        this.loginCountService = loginCountService;
     }
 
-
     public boolean isLogin() {
+        loginCountService.incrementCounter();
 
         boolean loginResult = username.equals("admin") && password.equals("654512");
 
