@@ -15,6 +15,6 @@ public class Main {
         comment.setAuthor("asca");
         comment.setText("vvv");
 
-        obj.deleteComment();
+        System.out.println(obj.deleteComment());
     }
 }

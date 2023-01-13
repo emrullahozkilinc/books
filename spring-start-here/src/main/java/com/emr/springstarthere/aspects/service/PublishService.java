@@ -16,7 +16,8 @@ public class PublishService {
     }
 
     @ToLog
-    public void deleteComment(){
+    public String deleteComment(){
         logger.info("Delete comment worked!");
+        return "donendeger";
     }
 }
